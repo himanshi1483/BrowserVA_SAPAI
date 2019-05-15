@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Tableau Voice</title>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creating Voice Assistant">
+  <meta name="author" content="Himanshi">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
+  <script src="annyang.min.js"></script>
+  <!-- Voice Recognition -->
+  <script src="audioinput.js"></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  <script src="tableau-data.js"></script>
+</head>
+
+<body onload=initializeViz();>
+  <div style="padding-bottom:30px;border-bottom:black 5px solid;background-color: white">
+    <img style="float:left;margin-left:5px;" src="Proximous-Final-Logo-Header.png">
+    <h2 style="padding-top:34px;margin-left:40%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+      TABLEAU VOICE ASSISANT</h2>
+  </div>
+  <div class="row" style="padding-top:5px;margin-left:15px;">
+    <div class="col-4" style="background-color:#EAEAEA;border: white solid 2px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"">
+   <div style="padding-top:5px;font-size: 14px"> 
+       <h4>Sample Phrases</h4>
+      <h6>Refresh Dashboard</h6>
+      <ul>
+          <li>"
+      Start Over" - To refresh the dashboard.</li> <!-- <li>"Show Highest sales by California state"</li>
+      <li>"Show Minimum sales by East region"</li>
+      <li>"Show lowest sales by Michigan state in year 2009"</li>
+      <li>"Show maximum sales by West region in year 2010"</li>
+      <li>"What is the Highest sales by California state"</li>
+      <li>"What is the total sales by East region"</li>
+      <li>"What is the lowest sales by Michigan state in 2009"</li>
+      <li>"What is the total sales by West region in 2010"</li> -->
+      </ul>
+      <h6>Filters</h6>
+      <ul>
+        <li>"Filter by East Region"</li>
+        <li>"Filter by Texas State"</li>
+        <li>"Filter by year 2009"</li>
+      </ul>
+      <h6>Total Sales</h6>
+      <ul>
+        <li>"Show total sales by California state"</li>
+        <li>"Show total sales by East region"</li>
+        <li>"Show total sales by Michigan state in year 2009"</li>
+        <li>"Show total sales by West region in year 2010"</li>
+        <li>"What is the total sales by California state"</li>
+        <li>"What is the total sales by East region"</li>
+        <li>"What is the total sales by Michigan state in 2009"</li>
+        <li>"What is the total sales by West region in 2010"</li>
+      </ul>
+      <h6>Select Marks</h6>
+      <ul>
+        <li>"Select Delaware State"</li>
+        <li>"Select South Region"</li>
+      </ul>
+
+      <i>@state : Any US State in the map <br>
+        @region : East, West, South<br>
+        <!-- @value : highest, lowest, maximum,minimum,total<br> -->
+        @year : years mentioned in dashboard</i>
+    </div>
+  </div>
+  <div class="col-8" style="text-align: center;background-color:#EAEAEA; padding-top: 10px;">
+    <!-- <input id="btnVoice" onclick=' responsiveVoice.speak("Hi. I am your Tableau Assistant. How may I help you?", "US English Female");'
+      type='button' value='🔊 Play' /> -->
+    <div id='tableauViz'></div>
+  </div>
+  <!-- <div class="col-1" style="float: right;background-color:#EAEAEA; padding-top: 10px;border: white solid 2px;">
+  </div> -->
+  <button id="getData" style="display:none" onclick="getUnderlyingData()" class="btn">Get Data</button>
+  <div id="dataTarget" style="display:none"></div>
+  </div>
+  <footer></footer>
+</body>
+
+</html>

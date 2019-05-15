@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Tableau GetData Test</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dynamic-index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+      <script src="https://cdn.cai.tools.sap/webchat/webchat.js" channelId="3456cb8c-3032-4235-b201-042a10a53e31" token="bf700c6d9e10251d11f67bc7db42de1f" id="cai-webchat"></script>
+
+  <!-- <div id="map"></div> -->
+    <div id="recast-webchat-div"></div>
+    <div style="padding-bottom:30px;border-bottom:black 5px solid;background-color: white">
+        <img style="float:left;margin-left:5px;" src="Proximous-Final-Logo-Header.png">
+        <h2 style="padding-top:34px;margin-left:40%;">
+            TABLEAU VOICE ASSISANT</h2>
+    </div>
+    <div class="row" style="padding-top:5px;margin-left:15px;">
+        <div class="col-4" style="background-color:#EAEAEA;border: white solid 2px;">
+            <div class="input-group mb-3" style=" padding-top: 15px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Tableau URL</span>
+                </div>
+                <input id="tableauURL" type="text" class="form-control" placeholder="Enter the url for your dashboard"
+                       aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <!-- <h4 class="" id="dashboardTitle"></h4> -->
+            <div class="btn btn-default btn-block" style="cursor:none;display:none" id="dashboardTitle"></div>
+            <p><i>Say "Filter By" any of the below column name</i></p>
+            <p><i>Choose value by saying "Value" and any of the value of the filter from the dashboard.</i></p>
+            <div class="container mt-3">
+                <ul class="list-inline" id="dashboardCols">
+                </ul>
+            </div> 
+            <br>
+            <br> 
+            <!-- <input type="text" class="speech-input form-control" placeholder="What's Up?" name="eng-input" style="height: 35px !important; font-size: 14px;"> -->
+
+        </div>
+
+        <div class="col-8" style="text-align: center;background-color:#EAEAEA; padding-top: 10px;">
+            <div id="tabs" style="display:none">
+                <ul>
+                    <li><a href="#tabs-1">Visualization</a></li>
+                    <li><a href="#tabs-2">Data</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div id="vizContainer"></div>
+                </div>
+                <div id="tabs-2">
+                    Worksheet Name :
+                    <select id="menu"></select>
+                    <div id="dataContainer">
+                    </div>
+                </div>
+            </div>
+            <div id="textarea"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
+    <script type="text/javascript" src="speech-input.js"></script>
+    <script type="text/javascript" src="dynamic-index.js"></script>
+
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script src="annyang.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+    <!-- Voice Recognition -->
+    <script src="dynamic-tableau.js"></script>
+</body>
+
+</html>
