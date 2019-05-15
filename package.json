@@ -4,6 +4,7 @@
   "description": "",
   "main": ".\\dynamic-index.html",
   "scripts": {
+     "start": ".\\dynamic-index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "HD",
